@@ -81,7 +81,7 @@ namespace Car
 
             // Поиск первого элемента
             stopwatch.Restart();
-            for (int i = 0; i < 100; i++) collection.Contains(first);
+            collection.Contains(first);
             stopwatch.Stop();
             times[0] = stopwatch.ElapsedTicks;
             Console.WriteLine($"Первый элемент: {times[0]} тиков");
@@ -90,7 +90,7 @@ namespace Car
             if (middle != null)
             {
                 stopwatch.Restart();
-                for (int i = 0; i < 100; i++) collection.Contains(middle);
+                collection.Contains(middle);
                 stopwatch.Stop();
                 times[1] = stopwatch.ElapsedTicks;
                 Console.WriteLine($"Центральный элемент: {times[1]} тиков");
@@ -98,14 +98,14 @@ namespace Car
 
             // Поиск последнего элемента
             stopwatch.Restart();
-            for (int i = 0; i < 100; i++) collection.Contains(last);
+            collection.Contains(last);
             stopwatch.Stop();
             times[2] = stopwatch.ElapsedTicks;
             Console.WriteLine($"Последний элемент: {times[2]} тиков");
 
             // Поиск несуществующего элемента
             stopwatch.Restart();
-            for (int i = 0; i < 100; i++) collection.Contains(nonExisting);
+            collection.Contains(nonExisting);
             stopwatch.Stop();
             times[3] = stopwatch.ElapsedTicks;
             Console.WriteLine($"Несуществующий элемент: {times[3]} тиков");
@@ -120,33 +120,33 @@ namespace Car
 
             // Поиск по ключу (первый)
             stopwatch.Restart();
-            for (int i = 0; i < 100; i++) dictionary.ContainsKey(firstKey);
+            dictionary.ContainsKey(firstKey);
             stopwatch.Stop();
-            times[0] = stopwatch.ElapsedTicks / 100;
+            times[0] = stopwatch.ElapsedTicks;
             Console.WriteLine($"Первый элемент: {times[0]} тиков");
 
             // Поиск по ключу (центральный)
             if (middleKey != null)
             {
                 stopwatch.Restart();
-                for (int i = 0; i < 100; i++) dictionary.ContainsKey(middleKey);
+                dictionary.ContainsKey(middleKey);
                 stopwatch.Stop();
-                times[1] = stopwatch.ElapsedTicks / 100;
+                times[1] = stopwatch.ElapsedTicks;
                 Console.WriteLine($"Центральный элемент: {times[1]} тиков");
             }
 
             // Поиск по ключу (последний)
             stopwatch.Restart();
-            for (int i = 0; i < 100; i++) dictionary.ContainsKey(lastKey);
+            dictionary.ContainsKey(lastKey);
             stopwatch.Stop();
-            times[2] = stopwatch.ElapsedTicks / 100;
+            times[2] = stopwatch.ElapsedTicks;
             Console.WriteLine($"Последний элемент: {times[2]} тиков");
 
             // Поиск по ключу (несуществующий)
             stopwatch.Restart();
-            for (int i = 0; i < 100; i++) dictionary.ContainsKey(nonExistingKey);
+            dictionary.ContainsKey(nonExistingKey);
             stopwatch.Stop();
-            times[3] = stopwatch.ElapsedTicks / 100;
+            times[3] = stopwatch.ElapsedTicks;
             Console.WriteLine($"Несуществующий элемент: {times[3]} тиков");
         }
     }
